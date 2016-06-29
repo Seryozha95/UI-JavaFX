@@ -20,9 +20,9 @@ public class UiJavaFx extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("fxml/home.fxml"));
-        
         Scene scene = new Scene(root);
-        
+        stage.setMinHeight(400);
+        stage.setMinWidth(300);
         stage.setScene(scene);
         stage.show();
     }

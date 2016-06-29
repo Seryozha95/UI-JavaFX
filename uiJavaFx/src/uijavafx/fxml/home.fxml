@@ -8,7 +8,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="416.0" prefWidth="310.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="416.0" prefWidth="310.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="uijavafx.controllers.homeController">
    <children>
       <HBox maxHeight="50.0" prefHeight="50.0" prefWidth="289.0">
          <children>
@@ -38,7 +38,7 @@
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
          </VBox.margin>
       </AnchorPane>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
          <children>
             <TableView prefHeight="200.0" prefWidth="269.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
               <columns>
@@ -54,14 +54,13 @@
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
          </VBox.margin>
       </AnchorPane>
-      <HBox prefHeight="72.0" prefWidth="310.0">
+      <AnchorPane maxHeight="50.0" prefHeight="50.0" prefWidth="200.0">
          <children>
-            <Label prefHeight="17.0" prefWidth="104.0" text="Records count:">
-               <HBox.margin>
-                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-               </HBox.margin>
-            </Label>
+            <Label prefHeight="17.0" prefWidth="104.0" text="Records count:" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" />
          </children>
-      </HBox>
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+      </AnchorPane>
    </children>
 </VBox>
