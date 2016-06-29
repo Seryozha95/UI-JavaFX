@@ -16,9 +16,17 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import uijavafx.interfaces.AddressBook;
+import uijavafx.interfaces.impl.CollectionAddressBook;
+import uijavafx.objects.Person;
 
 /**
  *
@@ -27,17 +35,41 @@ import javafx.stage.Stage;
 public class homeController implements Initializable {
     
     @FXML
-    private Label label;
+    private Label labelCount;
     
     @FXML
-    private void handleButtonAction(ActionEvent event) {
-        System.out.println("You clicked me!");
-        label.setText("Hello World!");
-    }
+    private Button btnAdd;
+    
+    @FXML
+    private Button btnUpdate;
+     
+    @FXML
+    private Button btnDelete;
+    
+    @FXML
+    private Button btnSearch;
+    
+    @FXML
+    private TextField searchText;
+    
+    @FXML
+    private TableView tableAddressBook;
+    
+    @FXML
+    private TableColumn<Person, String> columnSurname;
+    
+    @FXML
+    private TableColumn<Person, String> columnPhoneNumber;
+    
+    private CollectionAddressBook addressBook = new CollectionAddressBook();
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        this.columnSurname.setCellValueFactory(new PropertyValueFactory<Person, String>("surName"));
+        this.columnPhoneNumber.setCellValueFactory(new PropertyValueFactory<Person, String>("phoneNumber"));
+        this.addressBook.fillData();
+        this.tableAddressBook.setItems(this.addressBook.getPersonList());
+        this.updateCount();
     }    
     
     public void showDialog(ActionEvent actionEvent){
@@ -58,4 +90,7 @@ public class homeController implements Initializable {
         }
     }
     
+    private void updateCount(){
+        this.labelCount.setText(this.labelCount.getText() + " " +this.addressBook.getPersonList().size());
+    }
 }

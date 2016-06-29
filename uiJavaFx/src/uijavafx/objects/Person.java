@@ -17,13 +17,18 @@ public class Person {
     private String phoneNumber;
     private String address;
     
-    Person( String name, String surName, int age,
+    public Person( String name, String surName, int age,
         String phoneNumber, String address){
         this.name = name;
         this.surName = surName;
         this.age = age;
         this.phoneNumber = phoneNumber;
         this.address = address;
+    }
+    
+    public Person( String surName, String phoneNumber ){
+        this.surName = surName;
+        this.phoneNumber = phoneNumber;
     }
     
     public String getName(){
